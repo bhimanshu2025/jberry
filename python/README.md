@@ -1,5 +1,6 @@
-INSTALL STEPS:
-On a centos 7.5 vm
+# INSTALLATION STEPS
+
+## On a centos 7.5 vm
 ```
 yum install -y python3 git
 pip3 install --upgrade pip==21.0
@@ -7,7 +8,7 @@ pip3 install junos-eznc
 git clone https://github.com/bhimanshu2025/jberry.git
 ```
 
-On a Ubuntu 18.04.4 vm or server
+## On a Ubuntu 18.04.4 vm or server
 ```
 apt-get update
 apt-get -y install python3
@@ -36,7 +37,8 @@ config that is passed to the script.
 
 Run each script with -h to display all available flags
 
-All logging happens locally in jberry/python/jberry.log
+>[!NOTE]
+>All logging happens locally in jberry/python/jberry.log
 
 `python3 <script name> -h `
 
@@ -65,7 +67,7 @@ QA:
 All my testing has been done with SRX100, vSRX (standalone)
 
 
-**Script Definitions:**
+## Script Definitions
 
 ```
 get_config.py - Get config from Junos devices in xml or text or set format. The script can be used to backup config via a cronjob.
