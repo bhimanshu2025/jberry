@@ -1,0 +1,4 @@
+int_name: ge-1/0/0
+int_ip: 30.0.0.20
+int_prefix: 24
+unit_num: 0

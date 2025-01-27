@@ -1,0 +1,9 @@
+interfaces {
+    {{ int_name }} {
+        unit {{ unit_num }} {
+            family inet {
+                address {{ int_ip }}/{{ int_prefix }};
+            }
+        }
+    }
+}

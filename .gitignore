@@ -1,0 +1,10 @@
+ansible/dumped_files
+python/dumped_files
+python/__pycache__
+python/Quincy.yml
+python/EMEA.yml
+python/EMEA_AS.yml
+python/jberry.log
+python/unit_testing/jberry.log
+utils/__pycache__
+list.yml

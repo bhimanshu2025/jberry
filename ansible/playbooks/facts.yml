@@ -1,0 +1,17 @@
+---
+- name: Get Deevice facts
+  hosts: vsrx
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+  vars:
+    dump_dir: "/root/jberry/ansible/dumped_files"
+  tasks:
+    - name: Retrieve facts from junos devices
+      juniper_junos_facts:
+        savedir: "{{ dump_dir }}"
+        config_format: "set"
+    - name: print junos version
+      debug:
+        var: junos.config

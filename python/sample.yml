@@ -1,0 +1,27 @@
+---
+user: "root"
+password: "juniper@123" # if no username pwd provided for any device in devices list, these credentials will be used for connection
+from_email: "jberry@gmail.com"    # optional from email addresses for email alerts
+to_email: "jberry-user@gmail.com"   # optional comma separated email addresses for email alerts
+smtp_server: "smtp.gmail.com"     # optional for email alerts
+config: "files/templates/switch_int.j2"  # optional. Used by set_config.py for pushing config to devices. 
+# This file will contain the junos config in j2 format. Each device should have its own environment file 
+# under jberry/files/environment_variables/<device_name>.yml
+dump_path: "/root/backups/"  # optional path to dump files like config , delta config etc. 
+# Default is <install dir>/jberry/python/dumped_files/
+upgrade: # mandatory to define to use upgrade.py
+  package: "/root/jinstall-ppc-16.1R6.7-signed.tgz"   # on local system
+  remote_path: "/var/tmp/"
+  validate: "False"
+  checksum_algorithm: "sha256"
+devices:  # list of inventory junos devices
+  HP_MX:  # can be a hostname that dns can resolve or defined in localhosts /etc/hosts file
+  10.2.2.4: # can be an IP address
+  DYN_SPINE1:
+    name: "spine1"  # if name field is specified, that name will be used for naming all config, delta files 
+    ip: "10.85.3.2"   # if ip address is specificed, console wont be used even if defined
+    console: 
+    user: "root"  # use this user to connect only to this device
+    password: "Juniper"  # use this password to connect only to this device
+  qctss07.server.console.net:7027:  # can be console address
+    user: "lab"  # use this user to connect only to this device
