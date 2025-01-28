@@ -30,7 +30,7 @@ options to list inventory
 
 There are bunch of scripts written that act as a wrapper and leverage jberry/python/utils/junosDevice module. A user can write their 
 own wrapper scripts and make use of junosDevice module to achieve their end goal. These sample scripts are provided to achieve specific 
-tasks as listed below under "Script Definitions" section.
+tasks as listed below under "Script Definitions" section. When there are multiple devices to perform action on, the execution is parallel.
 
 Some of the tasks like set_config are capable of sending emails if a a diff is detected between the current config and some old backup
 config that is passed to the script.
